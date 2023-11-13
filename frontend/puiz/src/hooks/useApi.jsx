@@ -7,7 +7,7 @@ function useApi() {
 
   // const baseURL = "https://kangwedance.site/dev"
 
-  const baseURL = "http://localhost:8080"
+  const baseURL = "http://43.202.222.228//api"
 
 
   // [1]. method는 restful api의 메소드, requestBody는 api요청 시 필요한 데이터(객체)
