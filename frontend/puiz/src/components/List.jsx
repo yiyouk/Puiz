@@ -10,7 +10,12 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color : pink;
+    border: 1px solid #7767FD;
+    width: 80vw;
+    height: ;
+`
+
+const Item = styled.div`
 `
 
 function List() {
@@ -26,12 +31,15 @@ function List() {
     // }, []);
     
     useEffect(() => { //메세지 오면 댓글 목록 갱신
-        commentApi.fetchApi('GET', '/comment');
+
+        commentApi.fetchApi('GET', '/comments');
     }, [ms]);
     
 	useEffect(() => {
-		if(commentApi.data?.success){ //백에서 초기 리스트 받아오기
-			setComments(commentApi.data.data);
+		if(commentApi.data){ //백에서 초기 리스트 받아오기
+            setComments(commentApi.data);
+            console.log(comments);
+
 		}
 	}, [commentApi.data]);
     
@@ -62,16 +70,17 @@ function List() {
     // };
 
     return (
-		<Container>				
-			{comments.length ?
+        <Container>		
+            <Item>
+			{comments?.length ?
 					comments.map((comment, index) => (
                         <div key={index}>
-                            <p>{comment.id}</p>
-                            <p>{comment.comment}</p>
+                            <p>{comment.content}</p>
 						</div>
 					))
 					: <div>글이 없어</div>
-			}
+                }
+            </Item>
 		</Container>
 	);
 }
