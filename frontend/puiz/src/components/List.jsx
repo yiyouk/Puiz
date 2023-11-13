@@ -31,6 +31,7 @@ function List() {
     // }, []);
     
     useEffect(() => { //메세지 오면 댓글 목록 갱신
+
         commentApi.fetchApi('GET', '/comments');
     }, [ms]);
     
@@ -38,6 +39,7 @@ function List() {
 		if(commentApi.data){ //백에서 초기 리스트 받아오기
             setComments(commentApi.data);
             console.log(comments);
+
 		}
 	}, [commentApi.data]);
     

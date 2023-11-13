@@ -6,7 +6,9 @@ function useApi() {
   const [error, setError] = useState(null);
 
   // const baseURL = "https://kangwedance.site/dev"
+
   const baseURL = "http://localhost:8080"
+
 
   // [1]. method는 restful api의 메소드, requestBody는 api요청 시 필요한 데이터(객체)
   async function fetchApi(method, url, requestBodyOrCallback, onSuccess) {

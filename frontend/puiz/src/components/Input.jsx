@@ -15,13 +15,14 @@ function Input() {
   const [comment, setComment] = useState("");
   const [password, setPassword] = useState("");
 
+
     //댓글 작성	
 	const handleComment = (e) => {
 		setComment(e.target.value);
-  };
-  
+
   const handlePassword = (e) => {
 		setPassword(e.target.value);
+
     };
 
     //댓글 등록	
